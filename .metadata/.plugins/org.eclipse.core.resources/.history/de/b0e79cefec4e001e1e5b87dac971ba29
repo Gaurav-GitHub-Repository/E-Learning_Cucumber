@@ -1,0 +1,59 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+
+
+    Feature: Feature to test functionality of application
+  
+  	@SmokeTest
+  	Scenario: Verify functionality of application 
+    Given User is on login page
+    When User enters username and password
+    When Clicks on login button
+    When User is navigated to homepage
+    When User clicks on update profile button
+    Then Verify login page title
+    
+    @FunctionalTest
+    Scenario: Verify update profile details in dashboard 
+    Given User clicks on update profile button
+    When User uploads picture 
+    And  User enters mobile number and text in headline
+    Then Verify uploaded picture in dashboard
+      
+    @RegressionTest
+    Scenario: Verify uploaded picture in dashboard
+    Given User is on login page
+    When User enters <"username"> and <"password">
+    And Clicks on login button
+    And User is navigated to homepage
+    Then Verify uploaded picture in dashboard
+
+
+   
+    
+# @tag2
+#  Scenario Outline: Title of your scenario outline
+#  Given I want to write a step with <name>
+#  When I check for the <value> in step
+#  Then I verify the <status> in step
+
+#  Examples: 
+#  | name  | value | status  |
+#  | name1 |     5 | success |
+# | name2 |     7 | Fail    |
