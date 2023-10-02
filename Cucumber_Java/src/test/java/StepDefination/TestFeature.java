@@ -42,12 +42,13 @@ public class TestFeature extends Utility{
 	    // Write code here that turns the phrase above into concrete actions
 		WebElement EmailAddress = driver.findElement(By.xpath("//*[@id='login-email']"));
 		WebElement Pwd = driver.findElement(By.xpath("//*[@id='login-password']"));
+
+		//Enter valid credentials
+		Thread.sleep(1000);
+		EmailAddress.sendKeys("abc@gmail.com");
 		
 		Thread.sleep(1000);
-		EmailAddress.sendKeys("gaurav.pathangej@gmail.com");
-		
-		Thread.sleep(1000);
-		Pwd.sendKeys("GauravExcelr");
+		Pwd.sendKeys("abc");
 	}
 	
 	@When("Clicks on login button")
